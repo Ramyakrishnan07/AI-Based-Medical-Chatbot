@@ -1,0 +1,123 @@
+{% extends 'layout.html' %}
+
+{% block title %}MediDiagnose - AI Powered Health Assistant{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mb-5">
+        <div class="col-md-10 text-center">
+            <h1 class="display-4 fw-bold mb-4">Your AI-Powered Health Assistant</h1>
+            <p class="lead mb-4">
+                MediDiagnose uses artificial intelligence to help you understand possible health conditions based on your symptoms. 
+                Get quick insights about your health concerns with our easy-to-use tools.
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="{{ url_for('chat') }}" class="btn btn-primary btn-lg px-4">
+                    <i class="fas fa-stethoscope me-2"></i>Check Symptoms
+                </a>
+                <a href="{{ url_for('medical_assistant') }}" class="btn btn-outline-secondary btn-lg px-4">
+                    <i class="fas fa-robot me-2"></i>Ask Medical Questions
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-search text-primary" style="font-size: 2.5rem;"></i>
+                    </div>
+                    <h3 class="card-title h4">Symptom Analysis</h3>
+                    <p class="card-text">
+                        Answer questions about your symptoms and get an assessment of possible conditions based on our machine learning model.
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center">
+                    <a href="{{ url_for('chat') }}" class="btn btn-outline-primary">Start Analysis</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-robot text-primary" style="font-size: 2.5rem;"></i>
+                    </div>
+                    <h3 class="card-title h4">Medical Assistant</h3>
+                    <p class="card-text">
+                        Have questions about medical conditions? Our AI assistant can provide information and answer your health-related questions.
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center">
+                    <a href="{{ url_for('medical_assistant') }}" class="btn btn-outline-primary">Ask Questions</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-exclamation-triangle text-primary" style="font-size: 2.5rem;"></i>
+                    </div>
+                    <h3 class="card-title h4">Important Disclaimer</h3>
+                    <p class="card-text">
+                        This tool is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider.
+                    </p>
+                </div>
+                <div class="card-footer bg-transparent border-0 text-center">
+                    <a href="{{ url_for('chat') }}" class="btn btn-outline-primary">Understand More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-5">
+        <div class="col-lg-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h2 class="h3 mb-4 text-center">How It Works</h2>
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center p-3 mb-3" style="width: 60px; height: 60px;">
+                                    <h3 class="h5 mb-0">1</h3>
+                                </div>
+                                <h4 class="h5">Enter Your Symptoms</h4>
+                                <p class="text-muted">
+                                    Tell our AI about the symptoms you're experiencing through our interactive chat interface.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center p-3 mb-3" style="width: 60px; height: 60px;">
+                                    <h3 class="h5 mb-0">2</h3>
+                                </div>
+                                <h4 class="h5">Get Instant Analysis</h4>
+                                <p class="text-muted">
+                                    Our machine learning model analyzes your symptoms to identify potential health conditions.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <div class="bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center p-3 mb-3" style="width: 60px; height: 60px;">
+                                    <h3 class="h5 mb-0">3</h3>
+                                </div>
+                                <h4 class="h5">Review Recommendations</h4>
+                                <p class="text-muted">
+                                    Get information about potential conditions, severity assessment, and precautionary measures.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

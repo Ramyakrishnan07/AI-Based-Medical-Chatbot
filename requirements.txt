@@ -1,0 +1,21 @@
+flask==2.3.3
+gunicorn==21.2.0
+pandas==2.1.1
+numpy==1.26.0
+scikit-learn==1.3.1
+nltk==3.8.1
+openai==1.3.5
+google-generativeai==0.3.1
+flask-sqlalchemy==3.1.1
+python-dotenv==1.0.0
+psycopg2-binary==2.9.9
+email-validator==2.0.0
+transformers==4.37.2
+sentence-transformers
+torch==2.2.0
+huggingface-hub==0.19.4
+wikipedia
+
+# setx OPENAI_API_KEY " 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 "
+# setx GOOGLE_API_KEY " AIzaSyAf4JkU_Ors-UQdI_PQ9YFdkaYDC4xddto "
+# python -c "import nltk; nltk.download('wordnet'); nltk.download('punkt')"

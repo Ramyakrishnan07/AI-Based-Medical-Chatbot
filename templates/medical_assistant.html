@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block title %}MediDiagnose - Medical Assistant{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h4 mb-0">
+                        <i class="fas fa-robot me-2"></i>Medical Assistant
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <p class="lead mb-4">Ask me any medical questions/title of the symptoms or disease, and I'll provide information to help you understand health conditions better.</p>
+                    
+                    <form method="POST" action="{{ url_for('medical_assistant') }}" class="mb-4">
+                        <div class="mb-3">
+                            <label for="query" class="form-label">Your Question</label>
+                            <textarea class="form-control" id="query" name="query" rows="3" placeholder="What would you like to know about health conditions or symptoms?" required></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane me-2"></i>Ask Question
+                            </button>
+                        </div>
+                    </form>
+                    
+                    {% if query and response %}
+                    <div class="card mb-4">
+                        <div class="card-header bg-light">
+                            <strong>Your Question:</strong>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-0">{{ query }}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <strong>Response:</strong>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-0">{{ response }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    <div class="alert alert-info mt-4">
+                        <h5 class="alert-heading"><i class="fas fa-info-circle me-2"></i>How this works</h5>
+                        <p class="mb-0">This medical assistant uses AI to answer your health-related questions. For a more interactive experience to check your symptoms and get a diagnosis, try the <a href="{{ url_for('chat') }}" class="alert-link">Symptom Checker</a>.</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="alert alert-warning mb-0">
+                        <small class="mb-0"><strong>Disclaimer:</strong> This assistant provides general information and is not a substitute for professional medical advice. Always consult with a healthcare provider for medical concerns.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
